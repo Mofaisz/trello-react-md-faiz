@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, Typography, Input, Button } from "@mui/material";
 
-const PopUpCard = () => {
+const PopUpCard = ({ handleClosePopUp }) => {  // Accept handleClosePopUp as a prop
   const [boardName, setBoardName] = useState("");
 
   const addBoard = async () => {
@@ -17,7 +17,8 @@ const PopUpCard = () => {
         }
       );
       let jsonData = await data.json();
-      setBoardName("");
+      setBoardName("");  // Clear the board name after submission
+      handleClosePopUp();  // Close the pop-up after successful board creation
     } catch (error) {
       console.log("Error adding board", error);
     }
@@ -27,18 +28,17 @@ const PopUpCard = () => {
     <>
       <Box
         sx={{
-          width: 350,
-          height: 400,
-          backgroundColor: "#FFFFFF", // White background
+          width: 300,
+          height: 350,
+          backgroundColor: "#FFFFFF",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          border: "1px solid #87CEFA", // Light blue border for a soft touch
-          borderRadius: "12px", // Rounded corners
-          color: "#333", // Dark text for readability
+          borderRadius: "50px",
+          color: "#333",
           position: "relative",
-          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)", // Light shadow for a clean look
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
         }}
       >
         <Typography
@@ -50,7 +50,7 @@ const PopUpCard = () => {
             fontWeight: "600",
             fontSize: "1.3rem",
             textAlign: "center",
-            color: "#87CEFA", // Matching the light blue color for consistency
+            color: "#87CEFA",
           }}
         >
           Create a Board
@@ -63,7 +63,7 @@ const PopUpCard = () => {
             top: 100,
             fontSize: "1rem",
             fontWeight: "500",
-            color: "#A5A5A5", // Light grey text for labels
+            color: "#A5A5A5",
           }}
         >
           Board Title
@@ -79,16 +79,16 @@ const PopUpCard = () => {
             padding: "10px",
             marginTop: "30px",
             borderRadius: "8px",
-            border: "1px solid #87CEFA", // Light blue border for input field
-            color: "#333", // Dark text inside input
+            border: "1px solid #87CEFA",
+            color: "#333",
             "&::placeholder": {
-              color: "#A5A5A5", // Placeholder text color
+              color: "#A5A5A5",
             },
             "& input": {
-              color: "#333", // Text color inside input
+              color: "#333",
               fontSize: "1rem",
             },
-            backgroundColor: "#F0F8FF", // Light blue background for input
+            backgroundColor: "#F0F8FF",
           }}
         />
 
@@ -101,12 +101,14 @@ const PopUpCard = () => {
           sx={{
             position: "absolute",
             bottom: 30,
-            backgroundColor: "#87CEFA", // Light blue button color
+            backgroundColor: "#87CEFA",
             width: "80%",
             padding: "12px",
             borderRadius: "8px",
             "&:hover": {
-              backgroundColor: "#4682B4", // Darker blue on hover
+              backgroundColor: "rgba(0, 0, 139, 0.8)",
+              transform: "scale(1.05)",
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
             },
           }}
         >

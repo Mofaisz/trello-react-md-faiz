@@ -69,9 +69,9 @@ const AddListDetail = ({ addNewListCallback }) => {
             borderRadius: 100,
             backgroundColor: "rgba(135, 206, 770, 0.5);",
             '&:hover': {
-              backgroundColor: "rgba(0, 0, 139, 0.8)", // Slightly darker background on hover
-              transform: "scale(1.05)", // Slightly enlarge the button on hover
-              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)", // Add a shadow on hover
+              backgroundColor: "rgba(0, 0, 139, 0.8)", 
+              transform: "scale(1.05)", 
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
             }
           }}
         >

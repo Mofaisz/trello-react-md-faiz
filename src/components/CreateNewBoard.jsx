@@ -1,77 +1,46 @@
-import React from 'react'
-import {Box,Dialog,Typography} from "@mui/material"
-import Card from "@mui/material/Card"
-import CardContent from '@mui/material/CardContent';
-import {useState} from "react"
+import React, { useState } from 'react'
+import { Box, Dialog, Card, CardContent, Typography } from "@mui/material"
 import PopUpCard from './PopUpCard';
 
-
 const CreateNewBoard = () => {
+  const [openPopUp, setOpenPopUp] = useState(false);
 
-    
-    const [openPopUp,setOpenPopUp] = useState(false)
+  const handleOpenPopUp = () => {
+    setOpenPopUp(true);
+  };
 
-    const handleOpenPopUp = () =>{
-        setOpenPopUp(true)
-    }
-
-    const handleClosePopUp = () =>{
-        setOpenPopUp(false)
-    }
-
-
-
-
+  const handleClosePopUp = () => {
+    setOpenPopUp(false);
+  };
 
   return (
-   <>
-    <Box>
-    <Card
-
-        onClick = {handleOpenPopUp}
-        // key = {}
-        sx = {{
-       
-            padding:2,
-           
-            cursor:"pointer",
-            width:200,
-            height:100,
-            // mr:5,
+    <>
+      <Box>
+        <Card
+          onClick={handleOpenPopUp}
+          sx={{
+            padding: 2,
+            cursor: "pointer",
+            width: 200,
+            height: 100,
             backgroundColor: "grey",
-            textContent:"center",
-            display:"flex",
-            justifyContent:"left",
-            position:"relative"
-        }}
-        
-        >
-          <CardContent
-          sx = {{
-          
-                   
-                  
+            display: "flex",
+            justifyContent: "left",
+            position: "relative",
           }}
-          >
-
-            <Typography
-            sx = {{
-              color:"white",
-              position:"absolute",
-
-
-            }}
-            >
-               Create New Board +
+        >
+          <CardContent>
+            <Typography sx={{ color: "white", position: "absolute" }}>
+              Create New Board +
             </Typography>
-            </CardContent>
+          </CardContent>
         </Card>
-        <Dialog open = {openPopUp} onClose={handleClosePopUp}>
-            <PopUpCard/>
+        <Dialog open={openPopUp} onClose={handleClosePopUp}>
+          <PopUpCard handleClosePopUp={handleClosePopUp} /> {/* Pass handleClosePopUp here */}
         </Dialog>
-    </Box>
-   </>
-  )
-}
+      </Box>
+    </>
+  );
+};
 
-export default CreateNewBoard
+export default CreateNewBoard;
