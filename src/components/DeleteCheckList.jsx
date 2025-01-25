@@ -15,7 +15,7 @@ const DeleteCheckList = ({ id, keyid, removeCheckItemCallback }) => {
         throw new Error(`Failed to delete item with ID: ${keyid}`);
       }
       console.log(`Item with ID: ${keyid} deleted successfully`);
-      removeCheckItemCallback(keyid); 
+      removeCheckItemCallback(keyid);
     } catch (error) {
       console.log("Error deleting item:", error);
     }

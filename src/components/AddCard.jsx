@@ -108,6 +108,7 @@ const AddCard = ({ id }) => {
                 borderRadius: "4px",
                 justifyContent: "space-between",
                 position: "relative",
+                width : "auto"
               }}
               key={card.id}
               variant="h7"
@@ -137,11 +138,7 @@ const AddCard = ({ id }) => {
         )}
       </Box>
 
-      {/* {isDisplayCardOpen && (
-  <Dialog open={isDisplayCardOpen} onClose={handleCloseDisplayCard}>
-    <DisplayCard id={selectedCardId} />
-  </Dialog>
-)} */}
+    
 
       <Dialog open={open} onClose={handleClose} sx={{ minWidth: "xl" }}>
         {selectedCardId && <CardList id={selectedCardId} />}

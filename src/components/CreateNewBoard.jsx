@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { Box, Dialog, Card, CardContent, Typography } from "@mui/material"
-import PopUpCard from './PopUpCard';
+import React, { useState } from "react";
+import { Box, Dialog, Card, CardContent, Typography } from "@mui/material";
+import PopUpCard from "./PopUpCard";
 
 const CreateNewBoard = () => {
   const [openPopUp, setOpenPopUp] = useState(false);
@@ -36,7 +36,8 @@ const CreateNewBoard = () => {
           </CardContent>
         </Card>
         <Dialog open={openPopUp} onClose={handleClosePopUp}>
-          <PopUpCard handleClosePopUp={handleClosePopUp} /> {/* Pass handleClosePopUp here */}
+          <PopUpCard handleClosePopUp={handleClosePopUp} />{" "}
+          {/* Pass handleClosePopUp here */}
         </Dialog>
       </Box>
     </>

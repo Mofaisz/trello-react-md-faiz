@@ -18,8 +18,8 @@ const AddCheckItem = ({ id, addCheckItemCallback }) => {
 
       if (response.ok) {
         const newCheckItem = await response.json();
-        addCheckItemCallback(newCheckItem); // Pass new check item to parent for state update
-        setName(""); // Clear input field after adding the item
+        addCheckItemCallback(newCheckItem); 
+        setName(""); 
       }
     } catch (error) {
       console.log(error);

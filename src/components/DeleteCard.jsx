@@ -42,7 +42,7 @@ const DisplayCard = ({ id }) => {
         {cards.length > 0 ? (
           cards.map((card) => (
             <Typography
-              onClick={() => handleOpen(card.id)} 
+              onClick={() => handleOpen(card.id)}
               sx={{ display: "flex", justifyContent: "space-between" }}
               key={card.id}
               variant="h4"

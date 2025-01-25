@@ -15,16 +15,15 @@ const CardList = ({ id }) => {
           fontWeight: "700",
           color: "#333",
           letterSpacing: "0.5px",
-          fontFamily : "sans-serif",
+          fontFamily: "sans-serif",
           alignItems: "center",
           marginBottom: "20px",
-          justifyContent :"center",
-          mt :3
+          justifyContent: "center",
+          mt: 3,
         }}
       >
         ADD CARDS
       </Typography>
-
 
       <Box
         sx={{
@@ -43,7 +42,7 @@ const CardList = ({ id }) => {
             padding: "20px",
             backgroundColor: "#f4f4f4",
             borderRadius: "8px",
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", 
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
           }}
         >
           <Box

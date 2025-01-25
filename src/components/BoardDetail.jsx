@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Box, Card, CardContent, CircularProgress, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  CircularProgress,
+  Typography,
+} from "@mui/material";
 import { IconButton } from "@mui/material";
-import ArchiveIcon from '@mui/icons-material/Archive';
+import ArchiveIcon from "@mui/icons-material/Archive";
 import AddListDetail from "./AddListDetail";
 import AddCard from "./AddCard";
 

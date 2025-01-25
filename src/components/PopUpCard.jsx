@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Box, Typography, Input, Button } from "@mui/material";
 
-const PopUpCard = ({ handleClosePopUp }) => {  // Accept handleClosePopUp as a prop
+const PopUpCard = ({ handleClosePopUp }) => {
+  // Accept handleClosePopUp as a prop
   const [boardName, setBoardName] = useState("");
 
   const addBoard = async () => {
@@ -17,8 +18,8 @@ const PopUpCard = ({ handleClosePopUp }) => {  // Accept handleClosePopUp as a p
         }
       );
       let jsonData = await data.json();
-      setBoardName("");  // Clear the board name after submission
-      handleClosePopUp();  // Close the pop-up after successful board creation
+      setBoardName(""); // Clear the board name after submission
+      handleClosePopUp(); // Close the pop-up after successful board creation
     } catch (error) {
       console.log("Error adding board", error);
     }

@@ -52,11 +52,20 @@ const CheckItem = ({ id }) => {
   };
 
   const removeCheckItemCallback = (itemId) => {
-    setCheckItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
+    setCheckItems((prevItems) =>
+      prevItems.filter((item) => item.id !== itemId)
+    );
   };
 
   return (
-    <Box sx={{ padding: "20px", backgroundColor: "#fafafa", borderRadius: "12px", boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)" }}>
+    <Box
+      sx={{
+        padding: "20px",
+        backgroundColor: "#fafafa",
+        borderRadius: "12px",
+        boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+      }}
+    >
       {/* Progress Bar Section */}
       <Box sx={{ marginBottom: "20px" }}>
         <Progressbar value={progress} />
@@ -84,10 +93,16 @@ const CheckItem = ({ id }) => {
             <Checkbox
               checked={item.state === "complete"}
               onChange={() => handleToggle(item.id)}
-              sx={{ marginRight: "12px", color: item.state === "complete" ? "green" : "gray" }}
+              sx={{
+                marginRight: "12px",
+                color: item.state === "complete" ? "green" : "gray",
+              }}
             />
 
-            <Typography variant="body1" sx={{ flexGrow: 1, color: "#333", fontWeight: "500" }}>
+            <Typography
+              variant="body1"
+              sx={{ flexGrow: 1, color: "#333", fontWeight: "500" }}
+            >
               {item.name}
             </Typography>
 
@@ -100,12 +115,17 @@ const CheckItem = ({ id }) => {
           </Box>
         ))
       ) : (
-        <Typography variant="body2" sx={{ color: "#777", textAlign: "center", fontStyle: "italic" }}>
+        <Typography
+          variant="body2"
+          sx={{ color: "#777", textAlign: "center", fontStyle: "italic" }}
+        >
           No check items available
         </Typography>
       )}
 
-      <Box sx={{ marginTop: "20px", display: "flex", justifyContent: "center" }}>
+      <Box
+        sx={{ marginTop: "20px", display: "flex", justifyContent: "center" }}
+      >
         <AddCheckItem id={id} addCheckItemCallback={addCheckItemCallback} />
       </Box>
     </Box>

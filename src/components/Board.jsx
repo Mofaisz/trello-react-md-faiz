@@ -74,9 +74,7 @@ const Board = () => {
             width:200,
             height:100,
             // mr:5,
-           
-            backgroundImage: `url(${value.prefs.backgroundImage}) `,
-            backgroundSize: "cover",
+            backgroundImage: `url(${value.prefs.backgroundImage || "https://images.unsplash.com/photo-1737044280473-06976eb5fda5?ixid=M3w3MDY2fDB8MXxjb2xsZWN0aW9ufDF8MzE3MDk5fHx8fHwyfHwxNzM3NDMyNjE1fA&ixlib=rb-4.0.3&w=2560&h=2048&q=90"})`,            backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundColor: "black",
             textContent:"center",
