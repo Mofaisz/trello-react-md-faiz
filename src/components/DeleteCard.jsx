@@ -4,7 +4,6 @@ import DeleteCard from "./DeleteCard";
 import CardList from "./CardList";
 
 const DisplayCard = ({ id }) => {
-  console.log("displaycard", id);
   const [open, setOpen] = useState(false);
   const [selectedCardId, setSelectedCardId] = useState(null);
   const handleOpen = (cardId) => {
@@ -29,7 +28,7 @@ const DisplayCard = ({ id }) => {
         const data = await response.json();
         setCards(data);
       } catch (error) {
-        console.log("Error fetching cards:", error);
+        throw new Error("Error fetching cards:", error);
       }
     };
 

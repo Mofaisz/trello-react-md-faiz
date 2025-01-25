@@ -21,7 +21,8 @@ const PopUpCard = ({ handleClosePopUp }) => {
       setBoardName(""); // Clear the board name after submission
       handleClosePopUp(); // Close the pop-up after successful board creation
     } catch (error) {
-      console.log("Error adding board", error);
+      throw new Error("Error  adding cards:", error);
+
     }
   };
 

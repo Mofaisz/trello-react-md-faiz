@@ -3,7 +3,6 @@ import AddInCheckList from "./AddInCheckList";
 import DisplayInCheckList from "./DisplayInCheckList";
 
 const CardList = ({ id }) => {
-  console.log("card", id);
 
   return (
     <>

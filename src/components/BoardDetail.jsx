@@ -26,7 +26,7 @@ const BoardDetail = () => {
         const data = await response.json();
         setBoardData(data);
       } catch (err) {
-        console.error("Error fetching board data:", err);
+        throw new Error("Error fetching board data:", err);
       }
     };
 
@@ -42,7 +42,7 @@ const BoardDetail = () => {
         const data = await response.json();
         setAllList(data);
       } catch (err) {
-        console.error("Error fetching list data:", err);
+        "Error fetching List:", err;
       }
     };
 
@@ -61,7 +61,8 @@ const BoardDetail = () => {
       // Remove the archived list from the UI
       setAllList((prevLists) => prevLists.filter((list) => list.id !== listId));
     } catch (err) {
-      console.error("Error archiving the list:", err);
+      throw new Error(`Error archiving the list: `, err);
+
     }
   };
 

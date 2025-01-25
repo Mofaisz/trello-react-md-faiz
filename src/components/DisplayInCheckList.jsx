@@ -16,7 +16,7 @@ const DisplayCheckList = ({ id }) => {
         const data = await response.json();
         setCheckList(data);
       } catch (error) {
-        console.log(error);
+        throw new Error(error);
       }
     }
 

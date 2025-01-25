@@ -13,9 +13,8 @@ const DeleteCheckCard = ({ id }) => {
       if (!response.ok) {
         throw new Error(`Failed to delete card with ID: ${id}`);
       }
-      console.log(`Card with ID: ${id} deleted successfully`);
     } catch (error) {
-      console.log("Error deleting card:", error);
+        throw new Error("Error deleting cards:", error);
     }
   };
 

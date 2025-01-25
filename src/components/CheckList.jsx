@@ -3,7 +3,6 @@ import { useState } from "react";
 
 const CheckList = ({ id }) => {
   const [name, setName] = useState("");
-  console.log("checklist", id);
 
   const handleAddChecklist = async () => {
     if (!name.trim()) {
@@ -28,7 +27,6 @@ const CheckList = ({ id }) => {
 
       setName("");
     } catch (error) {
-      console.error("Error adding checklist:", error);
       alert("Failed to add checklist. Please try again.");
     }
   };
